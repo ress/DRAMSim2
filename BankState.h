@@ -26,8 +26,8 @@
 
 
 
-#ifndef BANKSTATE_H
-#define BANKSTATE_H
+#ifndef DRAMSIM2_BANKSTATE_H
+#define DRAMSIM2_BANKSTATE_H
 
 //BankState.h
 //

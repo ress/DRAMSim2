@@ -21,8 +21,8 @@
 *
 *****************************************************************************/
 
-#ifndef SYSCONFIG_H
-#define SYSCONFIG_H
+#ifndef DRAMSIM2_SYSCONFIG_H
+#define DRAMSIM2_SYSCONFIG_H
 
 #include <iostream>
 #include <fstream>

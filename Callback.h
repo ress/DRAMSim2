@@ -20,8 +20,8 @@
 *	 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 *****************************************************************************/
-#ifndef CALLBACK_H
-#define CALLBACK_H
+#ifndef DRAMSIM2_CALLBACK_H
+#define DRAMSIM2_CALLBACK_H
 
 namespace DRAMSim
 {

@@ -26,8 +26,8 @@
 
 
 
-#ifndef BANK_H
-#define BANK_H
+#ifndef DRAMSIM2_BANK_H
+#define DRAMSIM2_BANK_H
 
 //Bank.h
 //

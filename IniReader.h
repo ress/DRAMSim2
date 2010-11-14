@@ -26,8 +26,8 @@
 
 
 
-#ifndef INIREADER_H
-#define INIREADER_H
+#ifndef DRAMSIM2_INIREADER_H
+#define DRAMSIM2_INIREADER_H
 
 #include <iostream>
 #include <fstream>

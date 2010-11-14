@@ -26,8 +26,8 @@
 
 
 
-#ifndef SIMULATOROBJ_H
-#define SIMULATOROBJ_H
+#ifndef DRAMSIM2_SIMULATOROBJ_H
+#define DRAMSIM2_SIMULATOROBJ_H
 
 //SimulatorObject.h
 //

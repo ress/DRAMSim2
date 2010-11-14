@@ -26,8 +26,8 @@
 
 
 
-#ifndef BUSPACKET_H
-#define BUSPACKET_H
+#ifndef DRAMSIM2_BUSPACKET_H
+#define DRAMSIM2_BUSPACKET_H
 //BusPacket.h
 //
 //Header file for bus packet object

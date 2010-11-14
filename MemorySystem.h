@@ -21,8 +21,8 @@
 *
 *****************************************************************************/
 
-#ifndef MEMORYSYSTEM_H
-#define MEMORYSYSTEM_H
+#ifndef DRAMSIM2_MEMORYSYSTEM_H
+#define DRAMSIM2_MEMORYSYSTEM_H
 
 //MemorySystem.h
 //

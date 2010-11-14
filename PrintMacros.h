@@ -23,8 +23,8 @@
 
 
 
-#ifndef PRINT_MACROS_H
-#define PRINT_MACROS_H
+#ifndef DRAMSIM2_PRINT_MACROS_H
+#define DRAMSIM2_PRINT_MACROS_H
 
 extern int SHOW_SIM_OUTPUT; //enable or disable PRINT() statements -- set by flag in TraceBasedSim.cpp
 

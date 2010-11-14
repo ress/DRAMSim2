@@ -22,8 +22,8 @@
 *****************************************************************************/
 
 
-#ifndef DRAMSIM_H
-#define DRAMSIM_H
+#ifndef DRAMSIM2_DRAMSIM_H
+#define DRAMSIM2_DRAMSIM_H
 /*
  * This is a public header for DRAMSim including this along with libdramsim.so should
  * provide all necessary functionality to talk to an external simulator

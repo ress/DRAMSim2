@@ -26,8 +26,8 @@
 
 
 
-#ifndef TRANSACTION_H
-#define TRANSACTION_H
+#ifndef DRAMSIM2_TRANSACTION_H
+#define DRAMSIM2_TRANSACTION_H
 
 //Transaction.h
 //

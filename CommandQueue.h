@@ -24,8 +24,8 @@
 
 
 
-#ifndef CMDQUEUE_H
-#define CMDQUEUE_H
+#ifndef DRAMSIM2_CMDQUEUE_H
+#define DRAMSIM2_CMDQUEUE_H
 
 //CommandQueue.h
 //

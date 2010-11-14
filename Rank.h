@@ -22,8 +22,8 @@
 *****************************************************************************/
 
 
-#ifndef RANK_H
-#define RANK_H
+#ifndef DRAMSIM2_RANK_H
+#define DRAMSIM2_RANK_H
 
 #include "SimulatorObject.h"
 #include "BusPacket.h"
