@@ -39,7 +39,9 @@
 using namespace DRAMSim;
 using namespace std;
 
-#ifndef _SIM_
+#ifdef _SIM_
+int SHOW_SIM_OUTPUT = 0;
+#else
 int SHOW_SIM_OUTPUT = 1;
 ofstream visDataOut; //mostly used in MemoryController
 

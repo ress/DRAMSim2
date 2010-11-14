@@ -7,11 +7,9 @@ FILE(GLOB dramsim2_HEADER *.h)
 SOURCE_GROUP("Source Files" FILES ${dramsim2_SOURCE})
 SOURCE_GROUP("Header Files" FILES ${dramsim2_HEADER})
 
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_SIM_")
+
 ##################################
 # Add library
-
-FILE(GLOB exec_SOURCE1 TraceBasedSim.cpp)
-
-LIST(REMOVE_ITEM dramsim2_SOURCE exec_SOURCE1)
 
 ADD_LIBRARY(dramsim2 ${dramsim2_SOURCE} ${dramsim2_HEADER})
