@@ -1073,7 +1073,7 @@ bool CommandQueue::isEmpty(uint rank)
 	}
 	else
 	{
-		DEBUG("Invalid Queueing Stucture");
+		DRAMSIM2_DEBUG("Invalid Queueing Stucture");
 		abort();
 	}
 }

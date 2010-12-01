@@ -194,7 +194,7 @@ static ConfigMap configMap[] =
 
 void IniReader::WriteValuesOut(std::ofstream &visDataOut)
 {
-	//DEBUG("WRITE CALLED");
+	//DRAMSIM2_DEBUG("WRITE CALLED");
 	visDataOut<<"!!SYSTEM_INI"<<endl;
 	for (size_t i=0; configMap[i].variablePtr != NULL; i++)
 	{
@@ -295,7 +295,7 @@ void IniReader::SetKey(string key, string valueString, bool isSystemParam, size_
 				*((uint *)configMap[i].variablePtr) = intValue;
 				if (DEBUG_INI_READER)
 				{
-					DEBUG("\t - SETTING "<<configMap[i].iniKey<<"="<<intValue);
+					DRAMSIM2_DEBUG("\t - SETTING "<<configMap[i].iniKey<<"="<<intValue);
 				}
 				break;
 			case UINT64:
@@ -306,7 +306,7 @@ void IniReader::SetKey(string key, string valueString, bool isSystemParam, size_
 				*((uint64_t *)configMap[i].variablePtr) = int64Value;
 				if (DEBUG_INI_READER)
 				{
-					DEBUG("\t - SETTING "<<configMap[i].iniKey<<"="<<int64Value);
+					DRAMSIM2_DEBUG("\t - SETTING "<<configMap[i].iniKey<<"="<<int64Value);
 				}
 				break;
 			case FLOAT:
@@ -317,14 +317,14 @@ void IniReader::SetKey(string key, string valueString, bool isSystemParam, size_
 				*((float *)configMap[i].variablePtr) = floatValue;
 				if (DEBUG_INI_READER)
 				{
-					DEBUG("\t - SETTING "<<configMap[i].iniKey<<"="<<floatValue);
+					DRAMSIM2_DEBUG("\t - SETTING "<<configMap[i].iniKey<<"="<<floatValue);
 				}
 				break;
 			case STRING:
 				*((string *)configMap[i].variablePtr) = string(valueString);
 				if (DEBUG_INI_READER)
 				{
-					DEBUG("\t - SETTING "<<configMap[i].iniKey<<"="<<valueString);
+					DRAMSIM2_DEBUG("\t - SETTING "<<configMap[i].iniKey<<"="<<valueString);
 				}
 
 				break;
@@ -343,11 +343,11 @@ void IniReader::SetKey(string key, string valueString, bool isSystemParam, size_
 			{
 				if (isSystemParam && configMap[i].parameterType == DEV_PARAM)
 				{
-					DEBUG("WARNING: Found device parameter "<<configMap[i].iniKey<<" in system config file");
+					DRAMSIM2_DEBUG("WARNING: Found device parameter "<<configMap[i].iniKey<<" in system config file");
 				}
 				else if (!isSystemParam && configMap[i].parameterType == SYS_PARAM)
 				{
-					DEBUG("WARNING: Found system parameter "<<configMap[i].iniKey<<" in device config file");
+					DRAMSIM2_DEBUG("WARNING: Found system parameter "<<configMap[i].iniKey<<" in device config file");
 				}
 			}
 			// use the pointer stored in the config map to set the value of the variable
@@ -359,7 +359,7 @@ void IniReader::SetKey(string key, string valueString, bool isSystemParam, size_
 
 	if (configMap[i].variablePtr == NULL)
 	{
-		DEBUG("WARNING: UNKNOWN KEY '"<<key<<"' IN INI FILE");
+		DRAMSIM2_DEBUG("WARNING: UNKNOWN KEY '"<<key<<"' IN INI FILE");
 	}
 }
 
@@ -388,7 +388,7 @@ void IniReader::ReadIniFile(string filename, bool isSystemFile)
 			// skip zero-length lines
 			if (line.size() == 0)
 			{
-//					DEBUG("Skipping blank line "<<lineNumber);
+//					DRAMSIM2_DEBUG("Skipping blank line "<<lineNumber);
 				continue;
 			}
 			//search for a comment char
@@ -397,7 +397,7 @@ void IniReader::ReadIniFile(string filename, bool isSystemFile)
 				//if the comment char is the first char, ignore the whole line
 				if (commentIndex == 0)
 				{
-//						DEBUG("Skipping comment line "<<lineNumber);
+//						DRAMSIM2_DEBUG("Skipping comment line "<<lineNumber);
 					continue;
 				}
 //					DEBUG("Truncating line at comment"<<line[commentIndex-1]);
@@ -456,7 +456,7 @@ bool IniReader::CheckIfAllSet()
 	{
 		if (!configMap[i].wasSet)
 		{
-			DEBUG("WARNING: KEY "<<configMap[i].iniKey<<" NOT FOUND IN INI FILE.");
+			DRAMSIM2_DEBUG("WARNING: KEY "<<configMap[i].iniKey<<" NOT FOUND IN INI FILE.");
 			switch (configMap[i].variableType)
 			{
 				//the string and bool values can be defaulted, but generally we need all the numeric values to be set to continue
@@ -468,7 +468,7 @@ bool IniReader::CheckIfAllSet()
 				break;
 			case BOOL:
 				*((bool *)configMap[i].variablePtr) = false;
-				DEBUG("\tSetting Default: "<<configMap[i].iniKey<<"=false");
+				DRAMSIM2_DEBUG("\tSetting Default: "<<configMap[i].iniKey<<"=false");
 				break;
 			case STRING:
 				break;
@@ -484,7 +484,7 @@ void IniReader::InitEnumsFromStrings()
 		addressMappingScheme = Scheme1;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("ADDR SCHEME: 1");
+			DRAMSIM2_DEBUG("ADDR SCHEME: 1");
 		}
 	}
 	else if (ADDRESS_MAPPING_SCHEME == "scheme2")
@@ -492,7 +492,7 @@ void IniReader::InitEnumsFromStrings()
 		addressMappingScheme = Scheme2;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("ADDR SCHEME: 2");
+			DRAMSIM2_DEBUG("ADDR SCHEME: 2");
 		}
 	}
 	else if (ADDRESS_MAPPING_SCHEME == "scheme3")
@@ -500,7 +500,7 @@ void IniReader::InitEnumsFromStrings()
 		addressMappingScheme = Scheme3;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("ADDR SCHEME: 3");
+			DRAMSIM2_DEBUG("ADDR SCHEME: 3");
 		}
 	}
 	else if (ADDRESS_MAPPING_SCHEME == "scheme4")
@@ -508,7 +508,7 @@ void IniReader::InitEnumsFromStrings()
 		addressMappingScheme = Scheme4;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("ADDR SCHEME: 4");
+			DRAMSIM2_DEBUG("ADDR SCHEME: 4");
 		}
 	}
 	else if (ADDRESS_MAPPING_SCHEME == "scheme5")
@@ -516,7 +516,7 @@ void IniReader::InitEnumsFromStrings()
 		addressMappingScheme = Scheme5;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("ADDR SCHEME: 5");
+			DRAMSIM2_DEBUG("ADDR SCHEME: 5");
 		}
 	}
 	else if (ADDRESS_MAPPING_SCHEME == "scheme6")
@@ -524,7 +524,7 @@ void IniReader::InitEnumsFromStrings()
 		addressMappingScheme = Scheme6;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("ADDR SCHEME: 6");
+			DRAMSIM2_DEBUG("ADDR SCHEME: 6");
 		}
 	}
 	else
@@ -538,7 +538,7 @@ void IniReader::InitEnumsFromStrings()
 		rowBufferPolicy = OpenPage;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("ROW BUFFER: open page");
+			DRAMSIM2_DEBUG("ROW BUFFER: open page");
 		}
 	}
 	else if (ROW_BUFFER_POLICY == "close_page")
@@ -546,7 +546,7 @@ void IniReader::InitEnumsFromStrings()
 		rowBufferPolicy = ClosePage;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("ROW BUFFER: close page");
+			DRAMSIM2_DEBUG("ROW BUFFER: close page");
 		}
 	}
 	else
@@ -560,7 +560,7 @@ void IniReader::InitEnumsFromStrings()
 		queuingStructure = PerRankPerBank;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("QUEUING STRUCT: per rank per bank");
+			DRAMSIM2_DEBUG("QUEUING STRUCT: per rank per bank");
 		}
 	}
 	else if (QUEUING_STRUCTURE == "per_rank")
@@ -568,7 +568,7 @@ void IniReader::InitEnumsFromStrings()
 		queuingStructure = PerRank;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("QUEUING STRUCT: per rank");
+			DRAMSIM2_DEBUG("QUEUING STRUCT: per rank");
 		}
 	}
 	else
@@ -582,7 +582,7 @@ void IniReader::InitEnumsFromStrings()
 		schedulingPolicy = RankThenBankRoundRobin;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("SCHEDULING: Rank Then Bank");
+			DRAMSIM2_DEBUG("SCHEDULING: Rank Then Bank");
 		}
 	}
 	else if (SCHEDULING_POLICY == "bank_then_rank_round_robin")
@@ -590,7 +590,7 @@ void IniReader::InitEnumsFromStrings()
 		schedulingPolicy = BankThenRankRoundRobin;
 		if (DEBUG_INI_READER) 
 		{
-			DEBUG("SCHEDULING: Bank Then Rank");
+			DRAMSIM2_DEBUG("SCHEDULING: Bank Then Rank");
 		}
 	}
 	else

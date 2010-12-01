@@ -32,17 +32,17 @@ extern int SHOW_SIM_OUTPUT; //enable or disable PRINT() statements -- set by fla
 
 
 #ifdef DEBUG_BUILD
-	#define DEBUG(str)  std::cerr<< str <<std::endl;
+	#define DRAMSIM2_DEBUG(str)  std::cerr<< str <<std::endl;
 	#define DEBUGN(str) std::cerr<< str;
 #else
-	#define DEBUG(str) ;
+	#define DRAMSIM2_DEBUG(str) ;
 	#define DEBUGN(str) ;
 #endif
 
 #ifdef NO_OUTPUT
-	#undef DEBUG
+	#undef DRAMSIM2_DEBUG
 	#undef DEBUGN
-	#define DEBUG(str) ;
+	#define DRAMSIM2_DEBUG(str) ;
 	#define DEBUGN(str) ;
 	#define PRINT(str) ;
 	#define PRINTN(str) ;

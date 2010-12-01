@@ -94,7 +94,7 @@ MemoryController::MemoryController(MemorySystem *parent, std::ofstream *outfile)
 	//NUM_DEVICES = (total_storage64*8) / (NUM_ROWS * NUM_COLS * DEVICE_WIDTH * NUM_BANKS);
 	NUM_DEVICES = ((TOTAL_STORAGE * 8) / ((long)NUM_ROWS * NUM_COLS * DEVICE_WIDTH * NUM_BANKS))/NUM_RANKS;
 
-	DEBUG ("NUM DEVICES="<<NUM_DEVICES);
+	DRAMSIM2_DEBUG ("NUM DEVICES="<<NUM_DEVICES);
 
 	//bus related fields
 	outgoingCmdPacket = NULL;

@@ -199,7 +199,7 @@ void *parseTraceFileLine(string &line, uint64_t &addr, enum TransactionType &tra
 		}
 		if (SHOW_SIM_OUTPUT)
 		{
-			DEBUGN("ADDR='"<<hex<<addr<<dec<<"',CMD='"<<transType<<"'");//',DATA='"<<dataBuffer[0]<<"'");
+			DRAMSIM2_DEBUGN("ADDR='"<<hex<<addr<<dec<<"',CMD='"<<transType<<"'");//',DATA='"<<dataBuffer[0]<<"'");
 		}
 
 		//parse data
@@ -362,7 +362,7 @@ int main(int argc, char **argv)
 		traceFileName = pwdString + "/" +traceFileName;
 	}
 
-	DEBUG("== Loading trace file '"<<traceFileName<<"' == ");
+	DRAMSIM2_DEBUG("== Loading trace file '"<<traceFileName<<"' == ");
 
 	ifstream traceFile;
 	string line;
@@ -415,7 +415,7 @@ int main(int argc, char **argv)
 				}
 				else
 				{
-					DEBUG("WARNING: Skipping line "<<lineNumber<< " ('" << line << "') in tracefile");
+					DRAMSIM2_DEBUG("WARNING: Skipping line "<<lineNumber<< " ('" << line << "') in tracefile");
 				}
 				lineNumber++;
 			}

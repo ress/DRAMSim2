@@ -62,7 +62,7 @@ MemorySystem::MemorySystem(uint id, string deviceIniFilename, string systemIniFi
 	//set ID
 	systemID = id;
 
-	DEBUG("===== MemorySystem "<<systemID<<" =====");
+	DRAMSIM2_DEBUG("===== MemorySystem "<<systemID<<" =====");
 
 	if (pwd.length() > 0)
 	{
@@ -81,15 +81,15 @@ MemorySystem::MemorySystem(uint id, string deviceIniFilename, string systemIniFi
 
 
 
-	DEBUG("== Loading device model file '"<<deviceIniFilename<<"' == ");
+	DRAMSIM2_DEBUG("== Loading device model file '"<<deviceIniFilename<<"' == ");
 	IniReader::ReadIniFile(deviceIniFilename, false);
-	DEBUG("== Loading system model file '"<<systemIniFilename<<"' == ");
+	DRAMSIM2_DEBUG("== Loading system model file '"<<systemIniFilename<<"' == ");
 	IniReader::ReadIniFile(systemIniFilename, true);
 
 	//calculate the total storage based on the devices the user selected and the number of
 	//  ranks in the system
 	TOTAL_STORAGE = (long)NUM_RANKS * NUM_ROWS * NUM_COLS * NUM_BANKS * DEVICE_WIDTH / 8 * (JEDEC_DATA_BUS_WIDTH / DEVICE_WIDTH);
-//	DEBUG("TOTAL_STORAGE : "<<TOTAL_STORAGE);
+//	DRAMSIM2_DEBUG("TOTAL_STORAGE : "<<TOTAL_STORAGE);
 
 	IniReader::InitEnumsFromStrings();
 	if (!IniReader::CheckIfAllSet())
@@ -307,7 +307,7 @@ void MemorySystem::mkdirIfNotExist(string path)
 	{
 		if (errno == ENOENT)
 		{
-			DEBUG("\t directory doesn't exist, trying to create ...");
+			DRAMSIM2_DEBUG("\t directory doesn't exist, trying to create ...");
 			mode_t mode = (S_IXOTH | S_IXGRP | S_IXUSR | S_IROTH | S_IRGRP | S_IRUSR | S_IWUSR) ;
 			if (mkdir(path.c_str(), mode) != 0)
 			{
