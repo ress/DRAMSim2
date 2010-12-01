@@ -158,7 +158,7 @@ void Rank::receiveFromBus(BusPacket *packet)
 		incomingWriteBank = packet->bank;
 		incomingWriteRow = packet->row;
 		incomingWriteColumn = packet->column;
-		delete(packet);
+		//delete(packet);
 		break;
 	case WRITE_P:
 		//make sure a write is allowed
@@ -266,7 +266,7 @@ void Rank::receiveFromBus(BusPacket *packet)
 #else
 		// end of the line for the write packet
 #endif
-		delete(packet);
+		//delete(packet);
 		break;
 	default:
 		ERROR("== Error - Unknown BusPacketType trying to be sent to Bank");
