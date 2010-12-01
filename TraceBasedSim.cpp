@@ -199,7 +199,7 @@ void *parseTraceFileLine(string &line, uint64_t &addr, enum TransactionType &tra
 		}
 		if (SHOW_SIM_OUTPUT)
 		{
-			DRAMSIM2_DEBUGN("ADDR='"<<hex<<addr<<dec<<"',CMD='"<<transType<<"'");//',DATA='"<<dataBuffer[0]<<"'");
+			DEBUGN("ADDR='"<<hex<<addr<<dec<<"',CMD='"<<transType<<"'");//',DATA='"<<dataBuffer[0]<<"'");
 		}
 
 		//parse data
